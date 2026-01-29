@@ -47,29 +47,6 @@ $(document).ready(function() {
             $('#password').addClass('error-border');
             isValid = false;
         }
-        
-        if (isValid) {
-            // Trạng thái đang tải
-            $('#btnText').hide();
-            $('#btnSpinner').show();
-            $('#loginBtn').prop('disabled', true);
-            
-            // Mô phỏng quá trình đăng nhập
-            setTimeout(function() {
-                $('#successMessage').show();
-                
-                // Reset form
-                $('#btnText').show();
-                $('#btnSpinner').hide();
-                $('#loginBtn').prop('disabled', false);
-                
-                //  Ẩn thông báo sau 2 giây
-                setTimeout(function() {
-                    $('#loginForm')[0].reset();
-                    $('#successMessage').hide();
-                }, 2000);
-            }, 1500);
-        }
     });
     
     // Hàm kiểm tra email hợp lệ
@@ -109,4 +86,5 @@ $(document).ready(function() {
         e.preventDefault();
         alert('Đang chuyển hướng đến trang đăng ký...');
     });
+
 });
